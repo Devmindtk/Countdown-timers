@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="display:flex;justify-content:center;align-items:center;margin-top:10%;font-size:40px;"> COUNTDOWN BEGINS FOR MY NEW BEGINNING FROM 8TH FEB
+    </h1>
+    <div style="display:flex;justify-content:center;align-items:center;margin:5%;font-size:50px;border:3px solid red;padding:20px;"
+        id="content">
+
+    </div>
+    <script>
+        var dest_time = new Date("feb 6, 2022 11:59:59").getTime();
+        console.log(dest_time);
+        var countdown = setInterval(() => {
+            var current_time = new Date().getTime();
+            var diff = dest_time - current_time;
+            var days = Math.floor(diff / (1000 * 24 * 60 * 60));
+            var minute = Math.floor((diff % (100 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            var hours = Math.floor((diff % (1000 * 24 * 60 ** 60)) / (1000 * 60 * 60));
+            document.querySelector("#content").innerHTML = days + "days, " + hours + "hrs: " + minute + "min: " + seconds + "Sec";
+
+        }, 1000);
+
+
+
+    </script>
+</body>
+
+</html>
